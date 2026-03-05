@@ -183,3 +183,8 @@ As quatro entidades principais do sistema são:
 - **Appointment**
 
 Essas entidades e seus relacionamentos formam a base estrutural para o funcionamento da plataforma MedLink.
+
+
+## Diagrama do Banco de Dados
+
+![Diagrama ER](MedLink.png)
