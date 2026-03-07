@@ -26,6 +26,7 @@ As tecnologias utilizadas neste projeto incluem:
 - CSS
 - JavaScript
 - Banco de dados relacional
+- Figma
 - Git e GitHub para controle de versão
 
 ---
