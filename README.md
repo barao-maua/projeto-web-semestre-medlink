@@ -42,6 +42,13 @@ projeto-web-semestre-medlink
 └── README.md
 
 ---
+## Protótipo
+
+O Wireframe está disponível em:
+
+`https://www.figma.com/design/cNwc8MnUpOI1RfR2kMtR0k/Wireframe?t=HQwtvOXZ45q3GJKC-1`
+
+---
 
 ## Modelo de Dados
 
