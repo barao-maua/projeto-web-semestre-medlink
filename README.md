@@ -33,13 +33,13 @@ As tecnologias utilizadas neste projeto incluem:
 
 ## Estrutura do Projeto
 
+```text
 projeto-web-semestre-medlink
-│
 ├── docs
 │   ├── data-model.md
 │   └── MedLink.png
-│
 └── README.md
+```
 
 ---
 ## Protótipo
