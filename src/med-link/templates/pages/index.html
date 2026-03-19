@@ -1,20 +1,306 @@
-{% load static %}
-
 <c-layouts.base>
-<main class="hero bg-base-200 py-32">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img
-      src="{% static 'images/django-starter-fig.png' %}"
-      class="max-w-sm rounded-lg shadow-2xl"
-    />
-    <div>
-      <h1 class="text-5xl font-bold">Django Starter</h1>
-      <p class="py-6">
-        Template moderno para projetos Django com Tailwind CSS, DaisyUI e Django Cotton. 
-        Desenvolvimento rápido com componentes reutilizáveis, auto-reload e configurações otimizadas para aprendizado.
+
+  <!-- Hero Section -->
+  <section class="hero min-h-[80vh] relative overflow-hidden">
+    <img 
+      src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1600" 
+      alt="Médico atendendo paciente"
+      class="absolute inset-0 w-full h-full object-cover opacity-20"
+    >
+    <div class="hero-content text-center flex-col max-w-3xl relative z-10">
+      <div class="badge badge-primary badge-lg mb-4">🩺 Plataforma de Saúde Digital</div>
+      <h1 class="text-6xl font-bold text-base-content leading-tight">
+        Sua saúde, <span class="text-primary">conectada</span> ao melhor atendimento
+      </h1>
+      <p class="text-xl text-base-content/70 mt-6 max-w-xl">
+        O MedLink conecta pacientes e médicos de forma simples, rápida e organizada. 
+        Agende consultas online sem complicação, de onde estiver.
       </p>
-      <button class="btn btn-primary">Começar Agora</button>
+      <div class="flex gap-4 mt-8 flex-wrap justify-center">
+        <a href="{% url 'especialidades' %}" class="btn btn-primary btn-lg">
+          <i class="bi bi-search"></i> Buscar Médicos
+        </a>
+        <a href="{% url 'sobre' %}" class="btn btn-outline btn-lg">
+          Saiba Mais
+        </a>
+      </div>
     </div>
-  </div>
-</main>
+  </section>
+
+  <!-- Estatísticas -->
+  <section class="py-12 bg-primary text-primary-content">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-4xl font-bold">500+</p>
+          <p class="text-sm opacity-80 mt-1">Médicos cadastrados</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold">10k+</p>
+          <p class="text-sm opacity-80 mt-1">Consultas realizadas</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold">30+</p>
+          <p class="text-sm opacity-80 mt-1">Especialidades</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold">98%</p>
+          <p class="text-sm opacity-80 mt-1">Pacientes satisfeitos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section class="py-20 px-6 bg-base-100">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold">Como funciona?</h2>
+        <p class="text-base-content/60 mt-3">Em apenas 3 passos simples</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-primary text-primary-content flex items-center justify-center text-2xl font-bold mb-4">1</div>
+          <img 
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400" 
+            alt="Cadastro"
+            class="rounded-2xl w-full h-40 object-cover mb-4 shadow"
+          >
+          <h3 class="text-xl font-bold">Crie sua conta</h3>
+          <p class="text-base-content/60 mt-2">Cadastre-se gratuitamente como paciente em menos de 2 minutos.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-primary text-primary-content flex items-center justify-center text-2xl font-bold mb-4">2</div>
+          <img 
+            src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400" 
+            alt="Buscar médico"
+            class="rounded-2xl w-full h-40 object-cover mb-4 shadow"
+          >
+          <h3 class="text-xl font-bold">Encontre seu médico</h3>
+          <p class="text-base-content/60 mt-2">Busque por especialidade e escolha o profissional ideal para você.</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 rounded-full bg-primary text-primary-content flex items-center justify-center text-2xl font-bold mb-4">3</div>
+          <img 
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400" 
+            alt="Agendar consulta"
+            class="rounded-2xl w-full h-40 object-cover mb-4 shadow"
+          >
+          <h3 class="text-xl font-bold">Agende sua consulta</h3>
+          <p class="text-base-content/60 mt-2">Escolha data e horário disponíveis e confirme o agendamento.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="py-20 px-6 bg-base-200">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold">Por que usar o MedLink?</h2>
+        <p class="text-base-content/60 mt-3">Tudo que você precisa em um só lugar</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-calendar-check text-primary text-5xl"></i>
+            <h3 class="card-title mt-2">Agendamento Fácil</h3>
+            <p class="text-base-content/60">Marque consultas em poucos cliques, sem ligações e sem filas de espera.</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-people text-primary text-5xl"></i>
+            <h3 class="card-title mt-2">Médicos Qualificados</h3>
+            <p class="text-base-content/60">Todos os profissionais são verificados com CRM válido e especialidade confirmada.</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-shield-check text-primary text-5xl"></i>
+            <h3 class="card-title mt-2">Seguro e Confiável</h3>
+            <p class="text-base-content/60">Seus dados são protegidos e suas consultas ficam sempre organizadas.</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-clock text-primary text-5xl"></i>
+            <h3 class="card-title mt-2">Disponível 24h</h3>
+            <p class="text-base-content/60">Agende a qualquer hora do dia ou da noite, sem depender de horário comercial.</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-phone text-primary text-5xl"></i>
+            <h3 class="card-title mt-2">Acesso pelo Celular</h3>
+            <p class="text-base-content/60">Plataforma responsiva, funciona perfeitamente em qualquer dispositivo.</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <div class="card-body items-center text-center">
+            <i class="bi bi-bell text-primary text-5xl"></i>
+            <h3 class="card-title mt-2">Lembretes Automáticos</h3>
+            <p class="text-base-content/60">Receba notificações sobre suas consultas e nunca mais esqueça um agendamento.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Médicos em Destaque -->
+  <section class="py-20 px-6 bg-base-100">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold">Médicos em Destaque</h2>
+        <p class="text-base-content/60 mt-3">Conheça alguns dos nossos profissionais</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <figure>
+            <img 
+              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400" 
+              alt="Dr. Carlos Silva"
+              class="w-full h-48 object-cover"
+            >
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Dr. Carlos Silva</h3>
+            <div class="badge badge-primary">Cardiologia</div>
+            <p class="text-base-content/60 text-sm">CRM 12345 • 15 anos de experiência</p>
+            <div class="card-actions justify-end mt-2">
+              <a href="{% url 'especialidades' %}" class="btn btn-primary btn-sm">Agendar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <figure>
+            <img 
+              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400" 
+              alt="Dra. Ana Oliveira"
+              class="w-full h-48 object-cover"
+            >
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Dra. Ana Oliveira</h3>
+            <div class="badge badge-primary">Dermatologia</div>
+            <p class="text-base-content/60 text-sm">CRM 67890 • 10 anos de experiência</p>
+            <div class="card-actions justify-end mt-2">
+              <a href="{% url 'especialidades' %}" class="btn btn-primary btn-sm">Agendar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow hover:shadow-lg transition-shadow">
+          <figure>
+            <img 
+              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400" 
+              alt="Dr. Pedro Santos"
+              class="w-full h-48 object-cover"
+            >
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Dr. Pedro Santos</h3>
+            <div class="badge badge-primary">Pediatria</div>
+            <p class="text-base-content/60 text-sm">CRM 11223 • 8 anos de experiência</p>
+            <div class="card-actions justify-end mt-2">
+              <a href="{% url 'especialidades' %}" class="btn btn-primary btn-sm">Agendar</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="py-20 px-6 bg-base-200">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold">O que nossos pacientes dizem</h2>
+        <p class="text-base-content/60 mt-3">Histórias reais de quem já usa o MedLink</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="avatar placeholder">
+                <div class="bg-primary text-primary-content rounded-full w-12">
+                  <span class="text-lg">M</span>
+                </div>
+              </div>
+              <div>
+                <p class="font-bold">Maria Fernanda</p>
+                <p class="text-sm text-base-content/60">Paciente desde 2024</p>
+              </div>
+            </div>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="text-base-content/70">"Consegui agendar uma consulta em menos de 5 minutos. Plataforma incrível e muito fácil de usar!"</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="avatar placeholder">
+                <div class="bg-secondary text-secondary-content rounded-full w-12">
+                  <span class="text-lg">J</span>
+                </div>
+              </div>
+              <div>
+                <p class="font-bold">João Ricardo</p>
+                <p class="text-sm text-base-content/60">Paciente desde 2024</p>
+              </div>
+            </div>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="text-base-content/70">"Finalmente uma plataforma que organiza minhas consultas de forma clara. Recomendo muito!"</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="avatar placeholder">
+                <div class="bg-accent text-accent-content rounded-full w-12">
+                  <span class="text-lg">C</span>
+                </div>
+              </div>
+              <div>
+                <p class="font-bold">Camila Torres</p>
+                <p class="text-sm text-base-content/60">Paciente desde 2025</p>
+              </div>
+            </div>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="text-base-content/70">"Encontrei um cardiologista em minutos. O atendimento foi excelente e o agendamento super prático."</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 px-6 bg-primary text-primary-content text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold">Pronto para cuidar da sua saúde?</h2>
+      <p class="mt-4 text-lg opacity-80">Cadastre-se gratuitamente e agende sua primeira consulta hoje mesmo.</p>
+      <a href="{% url 'especialidades' %}" class="btn btn-lg bg-white text-primary hover:bg-base-200 mt-8">
+        <i class="bi bi-arrow-right-circle"></i> Começar agora
+      </a>
+    </div>
+  </section>
+
 </c-layouts.base>

@@ -1,13 +1,15 @@
-<nav class="navbar bg-base-100 shadow-sm">
+{% load static %}
+<nav class="navbar bg-base-100 shadow-sm px-6">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">
-    <i class="bi bi-cup-straw"></i>
-    Django Starter
+    <a href="{% url 'index' %}" class="btn btn-ghost">
+      <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-28 w-auto">
     </a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="{% url 'index' %}">Principal</a></li>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'sobre' %}">Sobre</a></li>
+      <li><a href="{% url 'especialidades' %}">Especialidades</a></li>
     </ul>
   </div>
 </nav>
