@@ -1,0 +1,21 @@
+/* Fundo suave para destacar o hero sem competir com o conteúdo. */
+.sobre-hero {
+  background-image:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.16), transparent 26%);
+}
+
+/* Prepara os cards da linha do tempo para o detalhe lateral. */
+.timeline-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra colorida que reforça visualmente a ideia de progresso. */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, oklch(0.62 0.19 259), oklch(0.72 0.16 215));
+}
