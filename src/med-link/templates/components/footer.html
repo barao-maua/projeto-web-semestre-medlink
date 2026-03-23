@@ -1,0 +1,41 @@
+{% load static %}
+<footer class="bg-base-200 text-base-content">
+
+  <div class="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Logo e descrição -->
+    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-20 md:h-28 w-auto mb-3">
+      <p class="text-base-content/60 text-sm">
+        Conectando pacientes e médicos de forma simples, rápida e organizada.
+      </p>
+    </div>
+
+    <!-- Links rápidos -->
+    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <h3 class="font-bold text-lg mb-3">Links Rápidos</h3>
+      <ul class="space-y-2 text-base-content/60 text-sm">
+        <li><a href="{% url 'index' %}" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="{% url 'sobre' %}" class="hover:text-primary transition-colors">Sobre</a></li>
+        <li><a href="{% url 'especialidades' %}" class="hover:text-primary transition-colors">Especialidades</a></li>
+      </ul>
+    </div>
+
+    <!-- Contato -->
+    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <h3 class="font-bold text-lg mb-3">Contato</h3>
+      <ul class="space-y-2 text-base-content/60 text-sm">
+        <li><i class="bi bi-envelope me-2"></i> contato@medlink.com</li>
+        <li><i class="bi bi-telephone me-2"></i> (16) 99999-9999</li>
+        <li><i class="bi bi-geo-alt me-2"></i> Ribeirão Preto, SP</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Rodapé inferior -->
+  <div class="border-t border-base-300 py-4 text-center text-sm text-base-content/50">
+    <p>© 2026 MedLink — Todos os direitos reservados</p>
+  </div>
+
+</footer>
