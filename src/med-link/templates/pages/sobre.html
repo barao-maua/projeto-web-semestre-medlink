@@ -1,0 +1,222 @@
+<c-layouts.base>
+
+    <!-- Hero institucional da pagina Sobre -->
+    <section class="sobre-hero relative overflow-hidden bg-base-200">
+        <div class="absolute inset-0 opacity-70"></div>
+        <div class="relative max-w-6xl mx-auto px-6 py-20 lg:py-28">
+            <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] items-center">
+                <div>
+                    <div class="badge badge-primary badge-outline mb-5">Sobre o MedLink</div>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Tecnologia para aproximar pacientes e profissionais de saúde
+                    </h1>
+                    <p class="text-lg text-base-content/70 mt-6 max-w-2xl">
+                        O MedLink nasceu para simplificar a jornada de cuidado. Reunimos
+                        especialidades, horários e informações importantes em uma única
+                        plataforma para tornar o agendamento mais rápido, claro e acessível.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="{% url 'especialidades' %}" class="btn btn-primary btn-lg">
+                            Explorar especialidades
+                        </a>
+                        <a href="{% url 'index' %}" class="btn btn-outline btn-lg">
+                            Voltar para a home
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl border border-base-300">
+                    <div class="card-body gap-6">
+                        <div>
+                            <p class="text-sm uppercase tracking-[0.3em] text-primary font-semibold">
+                                Nosso foco
+                            </p>
+                            <h2 class="text-2xl font-bold mt-2">Uma experiência de saúde mais humana e organizada</h2>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="rounded-2xl bg-primary/10 p-4">
+                                <p class="text-3xl font-bold text-primary">500+</p>
+                                <p class="text-sm text-base-content/70 mt-1">médicos cadastrados</p>
+                            </div>
+                            <div class="rounded-2xl bg-secondary/10 p-4">
+                                <p class="text-3xl font-bold text-secondary">30+</p>
+                                <p class="text-sm text-base-content/70 mt-1">especialidades disponíveis</p>
+                            </div>
+                            <div class="rounded-2xl bg-accent/10 p-4">
+                                <p class="text-3xl font-bold text-accent">10 mil</p>
+                                <p class="text-sm text-base-content/70 mt-1">consultas realizadas</p>
+                            </div>
+                            <div class="rounded-2xl bg-success/10 p-4">
+                                <p class="text-3xl font-bold text-success">98%</p>
+                                <p class="text-sm text-base-content/70 mt-1">satisfação dos pacientes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco com missão, visão e valores -->
+    <section class="py-20 px-6 bg-base-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-4xl font-bold">Por que o MedLink existe?</h2>
+                <p class="text-base-content/65 mt-4">
+                    Criamos a plataforma para reduzir a distância entre a necessidade do
+                    paciente e o atendimento certo, no momento certo.
+                </p>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <article class="card bg-base-200 shadow-sm border border-base-300">
+                    <div class="card-body">
+                        <div class="w-14 h-14 rounded-2xl bg-primary text-primary-content flex items-center justify-center text-2xl">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h3 class="card-title mt-3">Missão</h3>
+                        <p class="text-base-content/70">
+                            Facilitar o acesso a consultas médicas por meio de uma plataforma
+                            intuitiva, confiável e centrada nas pessoas.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card bg-base-200 shadow-sm border border-base-300">
+                    <div class="card-body">
+                        <div class="w-14 h-14 rounded-2xl bg-secondary text-secondary-content flex items-center justify-center text-2xl">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h3 class="card-title mt-3">Visão</h3>
+                        <p class="text-base-content/70">
+                            Ser uma referência em conectividade na área da saúde, tornando o
+                            agendamento online parte natural da rotina de cuidado.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card bg-base-200 shadow-sm border border-base-300">
+                    <div class="card-body">
+                        <div class="w-14 h-14 rounded-2xl bg-accent text-accent-content flex items-center justify-center text-2xl">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h3 class="card-title mt-3">Valores</h3>
+                        <p class="text-base-content/70">
+                            Clareza, segurança, empatia e eficiência para que cada etapa do
+                            atendimento seja mais simples e acolhedora.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Etapas que resumem a jornada do usuário dentro da plataforma -->
+    <section class="py-20 px-6 bg-base-200">
+        <div class="max-w-6xl mx-auto grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-start">
+            <div class="space-y-4">
+                <div class="badge badge-outline badge-primary">Como ajudamos</div>
+                <h2 class="text-4xl font-bold">Do primeiro clique ao agendamento confirmado</h2>
+                <p class="text-base-content/70 text-lg">
+                    Pensamos em uma experiência simples para quem precisa de agilidade e
+                    segurança na hora de encontrar atendimento médico.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="timeline-card card bg-base-100 shadow-md border border-base-300">
+                    <div class="card-body">
+                        <p class="text-sm font-semibold text-primary uppercase tracking-[0.25em]">1. Busca inteligente</p>
+                        <p class="text-base-content/70">
+                            O paciente encontra profissionais por especialidade, entende o perfil
+                            do atendimento e compara opções com mais clareza.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-card card bg-base-100 shadow-md border border-base-300">
+                    <div class="card-body">
+                        <p class="text-sm font-semibold text-primary uppercase tracking-[0.25em]">2. Escolha com confiança</p>
+                        <p class="text-base-content/70">
+                            Informações organizadas sobre experiência, área de atuação e
+                            disponibilidade ajudam na tomada de decisão.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-card card bg-base-100 shadow-md border border-base-300">
+                    <div class="card-body">
+                        <p class="text-sm font-semibold text-primary uppercase tracking-[0.25em]">3. Agendamento simplificado</p>
+                        <p class="text-base-content/70">
+                            Em poucos passos, a consulta fica registrada e o paciente segue com
+                            mais tranquilidade para o próximo cuidado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos principais destacados em cards -->
+    <section class="py-20 px-6 bg-base-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-4xl font-bold">O que torna a plataforma especial</h2>
+                <p class="text-base-content/65 mt-4">
+                    Recursos desenhados para simplificar o dia a dia de pacientes e
+                    profissionais de saúde.
+                </p>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <div class="card bg-base-200 border border-base-300">
+                    <div class="card-body">
+                        <i class="bi bi-search text-4xl text-primary"></i>
+                        <h3 class="card-title">Busca por especialidade</h3>
+                        <p class="text-base-content/70">Encontre com rapidez o atendimento mais adequado para cada necessidade.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200 border border-base-300">
+                    <div class="card-body">
+                        <i class="bi bi-calendar2-check text-4xl text-primary"></i>
+                        <h3 class="card-title">Agenda organizada</h3>
+                        <p class="text-base-content/70">Visualização clara de horários disponíveis para reduzir atrito no agendamento.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200 border border-base-300">
+                    <div class="card-body">
+                        <i class="bi bi-shield-lock text-4xl text-primary"></i>
+                        <h3 class="card-title">Confiança nos dados</h3>
+                        <p class="text-base-content/70">Estrutura pensada para proteger informações e manter a experiência consistente.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-200 border border-base-300">
+                    <div class="card-body">
+                        <i class="bi bi-phone text-4xl text-primary"></i>
+                        <h3 class="card-title">Acesso em qualquer tela</h3>
+                        <p class="text-base-content/70">Layout responsivo para que o usuário consiga navegar pelo celular ou computador.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada final para levar o usuário para a listagem de especialidades -->
+    <section class="py-20 px-6 bg-primary text-primary-content">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-bold">Quer ver isso na prática?</h2>
+            <p class="text-lg opacity-85 mt-4">
+                A página de especialidades mostra como o paciente pode explorar áreas de
+                atendimento e encontrar o médico ideal.
+            </p>
+            <a href="{% url 'especialidades' %}" class="btn btn-lg bg-white text-primary hover:bg-base-100 mt-8">
+                Ver especialidades
+            </a>
+        </div>
+    </section>
+
+</c-layouts.base>

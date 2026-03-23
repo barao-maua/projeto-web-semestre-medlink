@@ -1,0 +1,250 @@
+<c-layouts.base>
+
+    <!-- Hero com apresentação da página e controles de busca -->
+    <section class="especialidades-hero bg-base-200">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="max-w-3xl">
+                <div class="badge badge-primary badge-outline mb-5">Especialidades</div>
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                    Encontre a área médica certa para cada momento do cuidado
+                </h1>
+                <p class="text-lg text-base-content/70 mt-6">
+                    Explore as principais especialidades disponíveis no MedLink, compare
+                    perfis e descubra com mais facilidade qual atendimento combina com a
+                    sua necessidade.
+                </p>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl border border-base-300 mt-10">
+                <div class="card-body gap-6">
+                    <div class="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+                        <label class="input input-bordered flex items-center gap-3 w-full">
+                            <i class="bi bi-search text-base-content/50"></i>
+                            <input id="especialidade-search"
+                                   type="text"
+                                   class="grow"
+                                   placeholder="Pesquisar por nome ou descrição da especialidade">
+                        </label>
+
+                        <a href="{% url 'sobre' %}" class="btn btn-outline">
+                            Conhecer o MedLink
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3" id="especialidade-filtros">
+                        <button type="button" class="btn btn-sm btn-primary filtro-btn" data-filter="todas">Todas</button>
+                        <button type="button" class="btn btn-sm btn-outline filtro-btn" data-filter="clinica">Clínica</button>
+                        <button type="button" class="btn btn-sm btn-outline filtro-btn" data-filter="prevencao">Prevenção</button>
+                        <button type="button" class="btn btn-sm btn-outline filtro-btn" data-filter="infantil">Infantil</button>
+                        <button type="button" class="btn btn-sm btn-outline filtro-btn" data-filter="bem-estar">Bem-estar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grade principal de especialidades filtráveis -->
+    <section class="py-20 px-6 bg-base-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold">Especialidades em destaque</h2>
+                    <p class="text-base-content/65 mt-2">
+                        Selecione uma categoria ou pesquise para filtrar os cards abaixo.
+                    </p>
+                </div>
+                <p id="especialidade-status" class="text-sm text-base-content/60">
+                    Exibindo todas as especialidades
+                </p>
+            </div>
+
+            <div id="especialidades-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <!-- Cada card carrega categorias e palavras-chave para o filtro em JS -->
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="clinica prevencao" data-search="cardiologia coracao pressao circulacao exames preventivos">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-primary text-primary-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-heart-pulse"></i>
+                            </div>
+                            <span class="badge badge-primary badge-outline">Clínica</span>
+                        </div>
+                        <h3 class="card-title mt-4">Cardiologia</h3>
+                        <p class="text-base-content/70">
+                            Acompanha a saúde do coração, circulação e fatores de risco como
+                            hipertensão e colesterol alto.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="bem-estar" data-search="dermatologia pele cabelos unhas manchas acne estetica">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-secondary text-secondary-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-stars"></i>
+                            </div>
+                            <span class="badge badge-secondary badge-outline">Bem-estar</span>
+                        </div>
+                        <h3 class="card-title mt-4">Dermatologia</h3>
+                        <p class="text-base-content/70">
+                            Especialidade voltada para pele, cabelos e unhas, com foco em saúde,
+                            prevenção e tratamentos clínicos.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="infantil clinica" data-search="pediatria criancas bebes desenvolvimento vacinas acompanhamento infantil">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-accent text-accent-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-balloon-heart"></i>
+                            </div>
+                            <span class="badge badge-accent badge-outline">Infantil</span>
+                        </div>
+                        <h3 class="card-title mt-4">Pediatria</h3>
+                        <p class="text-base-content/70">
+                            Cuida da saúde de bebês, crianças e adolescentes, incluindo
+                            crescimento, vacinação e acompanhamento contínuo.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="prevencao clinica" data-search="ginecologia saude feminina exames rotina anticoncepcao">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-pink-500 text-white flex items-center justify-center text-2xl">
+                                <i class="bi bi-flower1"></i>
+                            </div>
+                            <span class="badge badge-outline">Prevenção</span>
+                        </div>
+                        <h3 class="card-title mt-4">Ginecologia</h3>
+                        <p class="text-base-content/70">
+                            Focada na saúde feminina, com orientação preventiva, exames e
+                            acompanhamento em diferentes fases da vida.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="bem-estar clinica" data-search="psicologia saude mental ansiedade terapia emocional comportamento">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-warning text-warning-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-chat-heart"></i>
+                            </div>
+                            <span class="badge badge-warning badge-outline">Bem-estar</span>
+                        </div>
+                        <h3 class="card-title mt-4">Psicologia</h3>
+                        <p class="text-base-content/70">
+                            Apoio para saúde emocional, autoestima, ansiedade, estresse e
+                            desenvolvimento de estratégias de cuidado mental.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="clinica prevencao" data-search="ortopedia ossos articulacoes postura lesoes dores mobilidade">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-info text-info-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-universal-access"></i>
+                            </div>
+                            <span class="badge badge-info badge-outline">Clínica</span>
+                        </div>
+                        <h3 class="card-title mt-4">Ortopedia</h3>
+                        <p class="text-base-content/70">
+                            Avalia lesões, dores e limitações relacionadas a ossos,
+                            articulações, músculos e postura.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="prevencao" data-search="oftalmologia visao olhos consulta lentes exames prevencao">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-success text-success-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-eye"></i>
+                            </div>
+                            <span class="badge badge-success badge-outline">Prevenção</span>
+                        </div>
+                        <h3 class="card-title mt-4">Oftalmologia</h3>
+                        <p class="text-base-content/70">
+                            Indicada para avaliação da visão, exames preventivos e tratamento de
+                            condições que afetam os olhos.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="clinica" data-search="neurologia cerebro nervos enxaqueca memoria sono">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-neutral text-neutral-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-cpu"></i>
+                            </div>
+                            <span class="badge badge-neutral badge-outline">Clínica</span>
+                        </div>
+                        <h3 class="card-title mt-4">Neurologia</h3>
+                        <p class="text-base-content/70">
+                            Acompanha sintomas e condições relacionadas ao sistema nervoso,
+                            como dores de cabeça, sono e memória.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="bem-estar prevencao" data-search="nutricao alimentacao habitos emagrecimento qualidade de vida">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-lime-500 text-white flex items-center justify-center text-2xl">
+                                <i class="bi bi-cup-hot"></i>
+                            </div>
+                            <span class="badge badge-outline">Bem-estar</span>
+                        </div>
+                        <h3 class="card-title mt-4">Nutrição</h3>
+                        <p class="text-base-content/70">
+                            Ajuda a construir uma rotina alimentar equilibrada, alinhada aos
+                            objetivos de saúde e qualidade de vida.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div id="especialidade-vazio" class="hidden alert mt-10">
+                <i class="bi bi-info-circle text-xl"></i>
+                <span>Nenhuma especialidade encontrada com esse filtro. Tente outro termo.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passos simples para orientar a escolha da especialidade -->
+    <section class="py-20 px-6 bg-base-200">
+        <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-3">
+            <div class="card bg-base-100 border border-base-300 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">1. Identifique sua necessidade</h3>
+                    <p class="text-base-content/70">
+                        Pense no sintoma, no tipo de acompanhamento ou no objetivo de saúde
+                        para filtrar a especialidade mais adequada.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 border border-base-300 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">2. Compare as opções</h3>
+                    <p class="text-base-content/70">
+                        Analise as informações do profissional, a disponibilidade e o foco de
+                        atendimento para decidir com mais seguranca.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 border border-base-300 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">3. Agende com praticidade</h3>
+                    <p class="text-base-content/70">
+                        Com a especialidade escolhida, o próximo passo é concluir o
+                        agendamento de forma simples e organizada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</c-layouts.base>
