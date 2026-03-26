@@ -1,15 +1,28 @@
+<!-- {% load static %} → necessário aqui também para usar {% static %} neste componente -->
 {% load static %}
+
+<!-- <nav> → tag semântica para navegação -->
+<!-- navbar, bg-base-100, shadow-sm → classes DaisyUI/Tailwind para estilo da barra -->
 <nav class="navbar bg-base-100 shadow-sm px-6">
-    <div class="flex-1">
-        <a href="{% url 'index' %}" class="btn btn-ghost">
-            <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-28 w-auto">
-        </a>
-    </div>
-    <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'sobre' %}">Sobre</a></li>
-            <li><a href="{% url 'especialidades' %}">Especialidades</a></li>
-        </ul>
-    </div>
+
+  <!-- flex-1 → ocupa todo o espaço da esquerda (empurra o menu para a direita) -->
+  <div class="flex-1">
+    <!-- Link da logo que volta para Home -->
+    <!-- {% url 'index' %} → gera a URL da rota com name='index' do urls.py → resulta em "/" -->
+    <a href="{% url 'index' %}" class="btn btn-ghost">
+      <!-- {% static %} → busca a imagem dentro da pasta static/ do projeto -->
+      <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-28 w-auto">
+    </a>
+  </div>
+
+  <!-- flex-none → não cresce, fica fixo à direita -->
+  <div class="flex-none">
+    <!-- menu menu-horizontal → lista de links na horizontal (DaisyUI) -->
+    <ul class="menu menu-horizontal px-1">
+      <!-- {% url 'nome' %} → sempre usar o name definido no urls.py, nunca a URL direta -->
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'sobre' %}">Sobre</a></li>
+      <li><a href="{% url 'especialidades' %}">Especialidades</a></li>
+    </ul>
+  </div>
 </nav>

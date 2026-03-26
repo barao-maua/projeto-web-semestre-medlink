@@ -1,18 +1,33 @@
-/* Animação suave ao entrar na página */
+/* Animação aplicada ao <main> quando a página carrega */
 main {
   animation: fadeIn 0.5s ease-in-out;
+  /* fadeIn → nome da animação definida abaixo */
+  /* 0.5s → duração de meio segundo */
+  /* ease-in-out → começa devagar, acelera no meio e termina devagar */
 }
 
+/* Define o que a animação fadeIn faz */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;              /* começa invisível */
+    transform: translateY(10px); /* começa 10px abaixo da posição final */
+  }
+  to {
+    opacity: 1;              /* termina totalmente visível */
+    transform: translateY(0);    /* volta para a posição original */
+  }
 }
 
-/* Hover nos cards */
+/* Prepara os cards para a animação de hover */
 .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* transition → define que as propriedades transform e box-shadow */
+  /* vão mudar suavemente em 0.2s quando alteradas */
 }
 
+/* Efeito quando o mouse passa por cima de um card */
 .card:hover {
   transform: translateY(-4px);
+  /* move o card 4px para cima, dando sensação de elevação */
+  /* o box-shadow muda automaticamente pois o DaisyUI já tem hover:shadow-lg no HTML */
 }

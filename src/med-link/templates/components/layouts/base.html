@@ -1,32 +1,57 @@
+<!-- {% load static %} → ativa a tag {% static %} do Django para referenciar arquivos da pasta static/ -->
 {% load static %}
+
 <!DOCTYPE html>
+<!-- data-theme="light" → define o tema claro do DaisyUI para toda a aplicação -->
 <html lang="pt-br" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedLink</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    {% if extra_css %}
+  <meta charset="UTF-8">
+  <!-- viewport → garante responsividade em celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedLink</title>
+
+  <!-- Bootstrap Icons → biblioteca de ícones usada com <i class="bi bi-..."> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- DaisyUI → componentes prontos (card, navbar, btn, badge...) construídos sobre o Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+  <!-- Tailwind CSS → framework utilitário, estiliza com classes diretamente no HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Temas do DaisyUI → permite usar data-theme="light", "dark", etc. -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+
+  <!-- CSS global do projeto → estilos que valem para todas as páginas -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+  <!-- Se a view passar extra_css no contexto, carrega o CSS específico da página -->
+  {% if extra_css %}
     <link rel="stylesheet" href="{% static extra_css %}">
-    {% endif %}
+  {% endif %}
 </head>
+
+<!-- min-h-screen → corpo ocupa no mínimo 100% da tela -->
+<!-- flex flex-col → organiza header, main e footer em coluna -->
 <body class="min-h-screen flex flex-col">
 
-    <c-header></c-header>
+  <!-- Componente Cotton → insere o header.html aqui automaticamente -->
+  <c-header></c-header>
 
-    <main class="flex-1">
-        {{ slot }}
-    </main>
+  <!-- flex-1 → o main cresce para ocupar todo o espaço disponível entre header e footer -->
+  <main class="flex-1">
+    <!-- {{ slot }} → aqui é injetado o conteúdo de cada página (index.html, sobre.html, etc.) -->
+    {{ slot }}
+  </main>
 
-    <c-footer></c-footer>
+  <!-- Componente Cotton → insere o footer.html aqui automaticamente -->
+  <c-footer></c-footer>
 
-    {% if extra_js %}
+  <!-- Se a view passar extra_js no contexto, carrega o JS específico da página -->
+  <!-- Fica no final do body para o HTML carregar antes do JavaScript -->
+  {% if extra_js %}
     <script src="{% static extra_js %}"></script>
-    {% endif %}
+  {% endif %}
 
 </body>
 </html>
