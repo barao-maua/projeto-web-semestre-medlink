@@ -1,0 +1,200 @@
+[
+{
+  "model": "app.specialty",
+  "pk": 1,
+  "fields": {
+    "name": "Cardiologia",
+    "description": "Especialidade de Cardiologia"
+  }
+},
+{
+  "model": "app.specialty",
+  "pk": 2,
+  "fields": {
+    "name": "Dermatologia",
+    "description": "Especialidade de Dermatologia"
+  }
+},
+{
+  "model": "app.specialty",
+  "pk": 3,
+  "fields": {
+    "name": "Pediatria",
+    "description": "Especialidade de Pediatria"
+  }
+},
+{
+  "model": "app.specialty",
+  "pk": 4,
+  "fields": {
+    "name": "Ortopedia",
+    "description": "Especialidade de Ortopedia"
+  }
+},
+{
+  "model": "app.specialty",
+  "pk": 5,
+  "fields": {
+    "name": "Psicologia",
+    "description": "Especialidade de Psicologia"
+  }
+},
+{
+  "model": "app.doctor",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "specialty": 1,
+    "crm": "CRM-12345",
+    "description": "Médica cardiologista com experiência em prevenção, diagnóstico e acompanhamento de doenças cardiovasculares."
+  }
+},
+{
+  "model": "app.doctor",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "specialty": 2,
+    "crm": "CRM-43783",
+    "description": "Médico dermatologista especializado em cuidados com a pele, acne, manchas, alergias e prevenção de doenças dermatológicas."
+  }
+},
+{
+  "model": "app.doctor",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "specialty": 3,
+    "crm": "CRM-67302",
+    "description": "Médica pediatra com atuação no acompanhamento infantil, vacinação, desenvolvimento da criança e orientações aos responsáveis."
+  }
+},
+{
+  "model": "app.doctor",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "specialty": 4,
+    "crm": "CRM-78403",
+    "description": "Médico ortopedista especializado em dores articulares, lesões musculares, fraturas e acompanhamento de problemas ósseos."
+  }
+},
+{
+  "model": "app.doctor",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "specialty": 5,
+    "crm": "CRM-89047",
+    "description": "Psicóloga com experiência em atendimento clínico, ansiedade, estresse, autoestima e acompanhamento emocional."
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$IkFt9N7ugKgGq0gHGG3t0O$yUCDHSnPIloxQQBWjbRa0+f2FHTCIKKAljpx4BR9IpI=",
+    "last_login": "2026-05-17T22:04:32.857Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@medlink.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-17T22:04:16.893Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "anamartins-cardiologia",
+    "first_name": "Ana",
+    "last_name": "Martins",
+    "email": "ana@medlink.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-17T22:06:40Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$VAQ72azRa6UAM4SshuiF6m$YmivKk0YSVUa7a7p7esS0h3x2FYc0L/nIYSb0ZJB6ig=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "brunocosta-dermatologia",
+    "first_name": "Bruno",
+    "last_name": "Costa",
+    "email": "bruno@medlink.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-17T22:07:17Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cR3ZEd8cPAzjnU0wnUdfyL$NfZh6+jbjyvqMhniA3fWbEopiGKe39o4T9sdbzGQFLg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "carlasouza-pediatria",
+    "first_name": "Carla",
+    "last_name": "Souza",
+    "email": "carla@medlink.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-17T22:07:52Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$TMcY6ycxYJZHlD4Uei4pjN$wztS+tK0M9KJaVD/Nkoz0Sb5cUG3TjFlpVqzSghIo9g=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "feliperocha-ortopedia",
+    "first_name": "Felipe",
+    "last_name": "Rocha",
+    "email": "felipe@medlink.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-17T22:08:20Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$oig80vCn3678YVxLhAC5po$IppKC3LO41BlNy2qxlrtJ6ScQVbh/rz1ekTfPgVuVsk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "marinalopes-psicologia",
+    "first_name": "Marina",
+    "last_name": "Lopes",
+    "email": "marina@medlink.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-17T22:08:49Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
