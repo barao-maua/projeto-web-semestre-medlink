@@ -1,0 +1,127 @@
+<c-layouts.base>
+
+    <section class="bg-base-200 py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <div class="mb-10">
+                <a
+                    href="{% url 'especialidades' %}"
+                    class="btn btn-outline btn-sm"
+                >
+                    <i class="bi bi-arrow-left"></i>
+                    Voltar
+                </a>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl border border-base-300">
+                <div class="card-body">
+
+                    <div class="flex items-center justify-between gap-4 flex-wrap">
+
+                        <div>
+                            <div class="badge badge-primary badge-outline mb-4">
+                                Especialidade
+                            </div>
+
+                            <h1 class="text-4xl font-bold">
+                                {{ specialty.name }}
+                            </h1>
+
+                            <p class="text-base-content/70 mt-4 max-w-3xl">
+                                {% if specialty.description %}
+                                    {{ specialty.description }}
+                                {% else %}
+                                    Especialidade médica disponível para atendimento online.
+                                {% endif %}
+                            </p>
+                        </div>
+
+                        <div class="stats shadow">
+                            <div class="stat">
+                                <div class="stat-title">
+                                    Médicos disponíveis
+                                </div>
+
+                                <div class="stat-value text-primary">
+                                    {{ specialty.doctors.count }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h2 class="text-2xl font-bold mb-6">
+                        Médicos da especialidade
+                    </h2>
+
+                    <div class="grid gap-6 md:grid-cols-2">
+
+                        {% for doctor in specialty.doctors.all %}
+
+                            <div class="card bg-base-200 border border-base-300">
+                                <div class="card-body">
+
+                                    <div class="flex items-start gap-4">
+
+                                        <div class="avatar">
+                                            <div class="w-16 rounded-full">
+                                                <img
+                                                    src="https://i.pravatar.cc/150?u={{ doctor.user.username }}"
+                                                    alt="{{ doctor.user.get_full_name }}"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h3 class="text-xl font-bold">
+                                                {{ doctor.user.get_full_name|default:doctor.user.username }}
+                                            </h3>
+
+                                            <p class="text-primary font-semibold">
+                                                CRM: {{ doctor.crm }}
+                                            </p>
+
+                                            {% if doctor.user.email %}
+                                                <p class="text-sm text-base-content/60 mt-1">
+                                                    {{ doctor.user.email }}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    {% if doctor.description %}
+                                        <p class="text-base-content/70 mt-4">
+                                            {{ doctor.description }}
+                                        </p>
+                                    {% endif %}
+
+                                    <div class="card-actions mt-4">
+                                        <a href="#" class="btn btn-primary w-full">
+                                            <i class="bi bi-calendar-check"></i>
+                                            Agendar consulta
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        {% empty %}
+
+                            <div class="alert alert-warning">
+                                <span>
+                                    Nenhum médico cadastrado para esta especialidade.
+                                </span>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</c-layouts.base>
