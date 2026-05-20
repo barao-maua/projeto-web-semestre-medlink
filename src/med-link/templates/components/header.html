@@ -1,24 +1,83 @@
 {% load static %}
 
-<!-- <nav> → tag semântica para navegação -->
-<!-- navbar, bg-base-100, shadow-sm → classes DaisyUI/Tailwind para estilo da barra -->
-<nav class="navbar bg-base-100 shadow-sm px-6">
+<nav class="navbar bg-base-100 shadow-sm px-6 h-20 sticky top-0 z-50">
 
-  <!-- flex-1 → ocupa todo o espaço da esquerda (empurra o menu para a direita) -->
-  <div class="flex-1">
-    <!-- Link da logo que volta para Home -->
-    <a href="{% url 'index' %}" class="btn btn-ghost">
-      <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-28 w-auto">
-    </a>
-  </div>
+    <!-- Logo -->
+    <div class="flex-1">
+        <a href="{% url 'index' %}" class="flex items-center">
+            <img src="{% static 'images/logo-medlink.png' %}"
+                 alt="MedLink"
+                 class="h-24 md:h-26 w-auto object-contain">
+        </a>
+    </div>
 
-  <!-- flex-none → não cresce, fica fixo à direita -->
-  <div class="flex-none">
-    <!-- menu menu-horizontal → lista de links na horizontal (DaisyUI) -->
-    <ul class="menu menu-horizontal px-1">
-      <li><a href="{% url 'index' %}">Home</a></li>
-      <li><a href="{% url 'sobre' %}">Sobre</a></li>
-      <li><a href="{% url 'especialidades' %}">Especialidades</a></li>
-    </ul>
-  </div>
+    <!-- Menu -->
+    <div class="flex-none">
+        <ul class="menu menu-horizontal px-1 items-center gap-2">
+
+            <li>
+                <a href="{% url 'index' %}" class="font-medium">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'sobre' %}" class="font-medium">
+                    Sobre
+                </a>
+            </li>
+
+            <!-- PÚBLICO -->
+            <li>
+                <a href="{% url 'especialidades' %}" class="font-medium">
+                    Especialidades
+                </a>
+            </li>
+
+            {% if request.user.is_authenticated %}
+
+            {% if request.user.doctor_profile %}
+
+            <!-- MENU MÉDICO -->
+            <li>
+                <a href="{% url 'meus_agendamentos' %}" class="font-medium">
+                    Consultas
+                </a>
+            </li>
+
+            {% else %}
+
+            <!-- MENU PACIENTE -->
+            <li>
+                <a href="{% url 'meus_agendamentos' %}" class="font-medium">
+                    Meus Agendamentos
+                </a>
+            </li>
+
+            {% endif %}
+
+            <li>
+                <a href="{% url 'logout' %}" class="btn btn-primary btn-sm ml-2">
+                    Sair
+                </a>
+            </li>
+
+            {% else %}
+
+            <li>
+                <a href="{% url 'login' %}" class="font-medium">
+                    Login
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'register' %}" class="btn btn-primary btn-sm ml-2">
+                    Cadastro
+                </a>
+            </li>
+
+            {% endif %}
+        </ul>
+    </div>
+
 </nav>
