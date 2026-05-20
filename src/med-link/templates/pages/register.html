@@ -1,0 +1,48 @@
+<c-layouts.base>
+    <div class="hero min-h-[calc(100vh-80px)] bg-base-200">
+        <div class="hero-content flex-col w-full max-w-md">
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl font-bold text-primary">Crie sua conta</h1>
+                <p class="py-6">Cadastre-se no MedLink para agendar consultas com os melhores especialistas.</p>
+            </div>
+            <div class="card shrink-0 w-full shadow-2xl bg-base-100">
+                <form class="card-body" method="post" action="{% url 'register' %}">
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-error mb-4">
+                        {{ form.non_field_errors }}
+                    </div>
+                    {% endif %}
+
+                    {% for field in form %}
+                    <div class="form-control mb-4">
+                        <label class="label">
+                            <span class="label-text font-semibold">{{ field.label }}</span>
+                        </label>
+                        {{ field }}
+                        {% if field.errors %}
+                        <label class="label">
+                            <span class="label-text-alt text-error">{{ field.errors.0 }}</span>
+                        </label>
+                        {% endif %}
+                        {% if field.help_text %}
+                        <label class="label">
+                            <span class="label-text-alt text-base-content/60">{{ field.help_text }}</span>
+                        </label>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                    <div class="form-control mt-6">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <p class="text-sm">Já possui uma conta? <a href="{% url 'login' %}" class="link link-primary">Faça login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</c-layouts.base>

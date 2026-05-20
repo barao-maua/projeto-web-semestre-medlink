@@ -1,0 +1,47 @@
+<c-layouts.base>
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-3xl font-bold text-primary mb-6">
+                    {% if edit %}Editar Agendamento{% else %}Agendar Consulta{% endif %}
+                </h2>
+
+                <form method="post" action="">
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-error mb-4 shadow-sm">
+                        {{ form.non_field_errors }}
+                    </div>
+                    {% endif %}
+
+                    {% for field in form %}
+                    <div class="form-control w-full mb-4">
+                        <label class="label">
+                            <span class="label-text font-semibold text-base">{{ field.label }}</span>
+                        </label>
+                        {{ field }}
+                        {% if field.errors %}
+                        <label class="label pb-0">
+                            <span class="label-text-alt text-error font-medium">{{ field.errors.0 }}</span>
+                        </label>
+                        {% endif %}
+                        {% if field.help_text %}
+                        <label class="label pb-0">
+                            <span class="label-text-alt text-base-content/60">{{ field.help_text }}</span>
+                        </label>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                    <div class="card-actions justify-end mt-8">
+                        <a href="{% url 'meus_agendamentos' %}" class="btn btn-ghost">Cancelar</a>
+                        <button type="submit" class="btn btn-primary px-8">
+                            {% if edit %}Salvar Alterações{% else %}Confirmar Agendamento{% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</c-layouts.base>

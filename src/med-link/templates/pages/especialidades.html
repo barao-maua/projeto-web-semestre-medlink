@@ -59,108 +59,29 @@
             </div>
 
             <div id="especialidades-grid" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-
-                {% for specialty in specialties %}
-                    <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm"
-                            data-category="clinica prevencao bem-estar infantil"
-                            data-search="{{ specialty.name|lower }} {{ specialty.description|lower }} {% for doctor in specialty.doctors.all %} {{ doctor.user.get_full_name|lower }} {{ doctor.crm|lower }} {{ doctor.description|lower }} {% endfor %}">
-
-                        <div class="card-body">
-                            <div class="flex items-start justify-between gap-4">
-                                <div class="w-14 h-14 rounded-2xl bg-primary text-primary-content flex items-center justify-center text-2xl">
-                                    <i class="bi bi-heart-pulse"></i>
-                                </div>
-
-                                <span class="badge badge-primary badge-outline">
-                                    {{ specialty.doctors.count }} médico(s)
-                                </span>
+                {% for spec in specialties %}
+                <article class="especialidade-card card bg-base-200 border border-base-300 shadow-sm" data-category="clinica" data-search="{{ spec.name|lower }} {{ spec.description|lower }}">
+                    <div class="card-body">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-primary text-primary-content flex items-center justify-center text-2xl">
+                                <i class="bi bi-heart-pulse"></i>
                             </div>
-
-                            <h3 class="card-title mt-4">
-                                {{ specialty.name }}
-                            </h3>
-
-                            <p class="text-sm text-base-content/60">
-                                Dados carregados dinamicamente com Django ORM
-                            </p>
-
-                            <p class="text-base-content/70 mt-2">
-                                {% if specialty.description %}
-                                    {{ specialty.description }}
-                                {% else %}
-                                    Especialidade disponível para atendimento e agendamento online.
-                                {% endif %}
-                            </p>
-
-                            <div class="divider my-2"></div>
-
-                            <h4 class="font-semibold">
-                                Médicos disponíveis
-                            </h4>
-
-                            {% if specialty.doctors.all %}
-                                <div class="space-y-3 mt-2">
-                                    {% for doctor in specialty.doctors.all %}
-                                        <div class="p-4 rounded-xl bg-base-100 border border-base-300">
-                                            <div class="flex flex-col gap-3">
-                                                <div class="flex items-start gap-3">
-                                                    <div class="avatar">
-                                                        <div class="w-12 rounded-full">
-                                                            <img
-                                                                src="https://i.pravatar.cc/150?u={{ doctor.user.username }}"
-                                                                alt="{{ doctor.user.get_full_name }}"
-                                                            />
-                                                        </div>
-                                                    </div>
-
-                                                    <div>
-                                                        <p class="font-bold">
-                                                            {{ doctor.user.get_full_name|default:doctor.user.username }}
-                                                        </p>
-
-                                                        <p class="text-sm text-primary font-semibold">
-                                                            CRM: {{ doctor.crm }}
-                                                        </p>
-
-                                                        {% if doctor.user.email %}
-                                                            <p class="text-sm text-base-content/60">
-                                                                {{ doctor.user.email }}
-                                                            </p>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-
-                                                {% if doctor.description %}
-                                                    <p class="text-sm text-base-content/65">
-                                                        {{ doctor.description }}
-                                                    </p>
-                                                {% endif %}
-
-                                                <a
-                                                    href="{% url 'especialidade_detalhe' specialty.id %}"
-                                                    class="btn btn-primary btn-sm w-full"
-                                                >
-                                                    <i class="bi bi-calendar-check"></i>
-                                                    Agendar consulta
-                                                </a>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                <p class="text-sm text-base-content/60 mt-2">
-                                    Nenhum médico cadastrado para esta especialidade.
-                                </p>
-                            {% endif %}
+                            <span class="badge badge-primary badge-outline">Clínica</span>
                         </div>
-                    </article>
-                {% empty %}
-                    <div class="alert alert-warning xl:col-span-3 md:col-span-2">
-                        <i class="bi bi-info-circle text-xl"></i>
-                        <span>Nenhuma especialidade cadastrada no momento.</span>
+                        <h3 class="card-title mt-4">{{ spec.name }}</h3>
+                        <p class="text-base-content/70">
+                            {{ spec.description|default:"Descrição não informada." }}
+                        </p>
+                        <div class="card-actions justify-end mt-4">
+                            <a href="{% url 'agendar' %}?especialidade={{ spec.id }}" class="btn btn-sm btn-outline btn-primary">Agendar</a>
+                        </div>
                     </div>
+                </article>
+                {% empty %}
+                <div class="col-span-full text-center py-10">
+                    <p class="text-base-content/60">Nenhuma especialidade cadastrada ainda.</p>
+                </div>
                 {% endfor %}
-
             </div>
 
             <div id="especialidade-vazio" class="hidden alert mt-10">
