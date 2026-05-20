@@ -1,5 +1,7 @@
 # render é a função do Django que junta uma requisição com um template HTML
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from .models import Specialty
 
 # Função chamada quando o usuário acessa "/"
 def index(request):
@@ -21,7 +23,28 @@ def sobre(request):
 
 # Função chamada quando o usuário acessa "/especialidades/"
 def especialidades(request):
+    # Busca todas as especialidades cadastradas no banco
+    # prefetch_related("doctors") também carrega os médicos vinculados
+    # Isso melhora a performance e evita várias consultas repetidas
+    specialties = Specialty.objects.prefetch_related("doctors__user").all()
+
     return render(request, 'pages/especialidades.html', {
         'extra_css': 'css/especialidades.css',
         'extra_js': 'js/especialidades.js',
+        'specialties': specialties,
+    })
+
+# Página individual de detalhes da especialidade
+def especialidade_detalhe(request, specialty_id):
+
+    # Busca a especialidade pelo ID
+    # Se não existir, retorna erro 404 automaticamente
+    specialty = get_object_or_404(
+        Specialty.objects.prefetch_related("doctors__user"),
+        id=specialty_id
+    )
+
+    return render(request, 'pages/especialidade-detalhe.html', {
+        'extra_css': 'css/especialidade-detalhe.css',
+        'specialty': specialty,
     })
