@@ -2,13 +2,13 @@
 
 <!-- <nav> → tag semântica para navegação -->
 <!-- navbar, bg-base-100, shadow-sm → classes DaisyUI/Tailwind para estilo da barra -->
-<nav class="navbar bg-base-100 shadow-sm px-6">
+<nav class="navbar bg-base-100 shadow-sm px-6 min-h-20 h-20">
 
   <!-- flex-1 → ocupa todo o espaço da esquerda (empurra o menu para a direita) -->
   <div class="flex-1">
     <!-- Link da logo que volta para Home -->
-    <a href="{% url 'index' %}" class="btn btn-ghost">
-      <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-28 w-auto">
+    <a href="{% url 'index' %}" class="inline-flex items-center h-full">
+      <img src="{% static 'images/logo-medlink.png' %}" alt="MedLink" class="h-[72px] w-auto block">
     </a>
   </div>
 
