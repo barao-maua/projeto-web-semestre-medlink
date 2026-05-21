@@ -28,6 +28,17 @@ def especialidades(request):
         'extra_js': 'js/especialidades.js',
     })
 
+def especialidade_detalhe(request, specialty_id):
+    specialty = get_object_or_404(
+        Specialty.objects.prefetch_related("doctors__user"),
+        id=specialty_id
+    )
+
+    return render(request, 'pages/especialidade-detalhe.html', {
+        'extra_css': 'css/especialidade-detalhe.css',
+        'specialty': specialty,
+    })
+
 def register_view(request):
     if request.method == 'POST':
         form = PatientRegistrationForm(request.POST)

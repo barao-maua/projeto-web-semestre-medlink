@@ -72,9 +72,62 @@
                         <p class="text-base-content/70">
                             {{ spec.description|default:"Descrição não informada." }}
                         </p>
-                        <div class="card-actions justify-end mt-4">
-                            <a href="{% url 'agendar' %}?especialidade={{ spec.id }}" class="btn btn-sm btn-outline btn-primary">Agendar</a>
-                        </div>
+                        <div class="divider my-3"></div>
+                        <h4 class="font-semibold text-sm">
+                            Médicos cadastrados
+                        </h4>
+
+                        {% if spec.doctors.all %}
+                            <div class="space-y-3 mt-3">
+                                {% for doctor in spec.doctors.all %}
+                                    <div class="p-4 rounded-xl bg-base-100 border border-base-300">
+                                        <div class="flex items-start gap-3">
+                                            <div class="avatar">
+                                                <div class="w-12 rounded-full">
+                                                    <img
+                                                        src="https://i.pravatar.cc/150?u={{ doctor.user.username }}"
+                                                        alt="{{ doctor.user.get_full_name }}"
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="flex-1">
+                                                <a
+                                                    href="{% url 'especialidade_detalhe' spec.id %}"
+                                                    class="font-bold hover:text-primary"
+                                                >
+                                                    {{ doctor.user.get_full_name|default:doctor.user.username }}
+                                                </a>
+
+                                                <p class="text-sm text-primary font-semibold">
+                                                    CRM: {{ doctor.crm }}
+                                                </p>
+
+                                                {% if doctor.description %}
+                                                    <p class="text-sm text-base-content/60 mt-1">
+                                                        {{ doctor.description|truncatechars:90 }}
+                                                    </p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+
+                                        <div class="card-actions justify-end mt-4">
+                                            <a
+                                                href="{% url 'agendar' %}?especialidade={{ spec.id }}&medico={{ doctor.id }}"
+                                                class="btn btn-sm btn-outline btn-primary"
+                                            >
+                                                <i class="bi bi-calendar-check"></i>
+                                                Agendar
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <p class="text-sm text-base-content/60 mt-3">
+                                Nenhum médico cadastrado para esta especialidade.
+                            </p>
+                        {% endif %}
                     </div>
                 </article>
                 {% empty %}

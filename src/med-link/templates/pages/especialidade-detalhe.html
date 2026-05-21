@@ -97,7 +97,10 @@
                                     {% endif %}
 
                                     <div class="card-actions mt-4">
-                                        <a href="#" class="btn btn-primary w-full">
+                                        <a
+                                            href="{% url 'agendar' %}?especialidade={{ specialty.id }}&medico={{ doctor.id }}"
+                                            class="btn btn-primary w-full"
+                                        >
                                             <i class="bi bi-calendar-check"></i>
                                             Agendar consulta
                                         </a>

@@ -22,6 +22,7 @@ urlpatterns = [
 
     # Rota "/especialidades/" → chama views.especialidades
     path('especialidades/', views.especialidades, name='especialidades'),
+    path('especialidades/<int:specialty_id>/', views.especialidade_detalhe, name='especialidade_detalhe'),
 
     # Rotas de Autenticação
     path('login/', views.login_view, name='login'),
