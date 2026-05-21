@@ -1,200 +1,1040 @@
 [
-{
-  "model": "app.specialty",
-  "pk": 1,
-  "fields": {
-    "name": "Cardiologia",
-    "description": "Especialidade de Cardiologia"
+  {
+    "model": "app.specialty",
+    "pk": 1,
+    "fields": {
+      "name": "Cardiologia",
+      "description": "Especialidade de Cardiologia"
+    }
+  },
+  {
+    "model": "app.specialty",
+    "pk": 2,
+    "fields": {
+      "name": "Dermatologia",
+      "description": "Especialidade de Dermatologia"
+    }
+  },
+  {
+    "model": "app.specialty",
+    "pk": 3,
+    "fields": {
+      "name": "Pediatria",
+      "description": "Especialidade de Pediatria"
+    }
+  },
+  {
+    "model": "app.specialty",
+    "pk": 4,
+    "fields": {
+      "name": "Ortopedia",
+      "description": "Especialidade de Ortopedia"
+    }
+  },
+  {
+    "model": "app.specialty",
+    "pk": 5,
+    "fields": {
+      "name": "Psicologia",
+      "description": "Especialidade de Psicologia"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$IkFt9N7ugKgGq0gHGG3t0O$yUCDHSnPIloxQQBWjbRa0+f2FHTCIKKAljpx4BR9IpI=",
+      "last_login": "2026-05-17T22:04:32.857Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@medlink.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-05-17T22:04:16.893Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "anamartins-cardiologia",
+      "first_name": "Ana",
+      "last_name": "Martins",
+      "email": "ana@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-17T22:06:40Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "brunocosta-dermatologia",
+      "first_name": "Bruno",
+      "last_name": "Costa",
+      "email": "bruno@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-17T22:07:17Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "carlasouza-pediatria",
+      "first_name": "Carla",
+      "last_name": "Souza",
+      "email": "carla@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-17T22:07:52Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "feliperocha-ortopedia",
+      "first_name": "Felipe",
+      "last_name": "Rocha",
+      "email": "felipe@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-17T22:08:20Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "marinalopes-psicologia",
+      "first_name": "Marina",
+      "last_name": "Lopes",
+      "email": "marina@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-17T22:08:49Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "lucasferreira-cardiologia",
+      "first_name": "Lucas",
+      "last_name": "Ferreira",
+      "email": "lucas@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "camilaandrade-cardiologia",
+      "first_name": "Camila",
+      "last_name": "Andrade",
+      "email": "camila@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "rafaelbarbosa-cardiologia",
+      "first_name": "Rafael",
+      "last_name": "Barbosa",
+      "email": "rafael.barbosa@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "patricialima-cardiologia",
+      "first_name": "Patrícia",
+      "last_name": "Lima",
+      "email": "patricia@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "gustavomelo-cardiologia",
+      "first_name": "Gustavo",
+      "last_name": "Melo",
+      "email": "gustavo@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "julianamendes-dermatologia",
+      "first_name": "Juliana",
+      "last_name": "Mendes",
+      "email": "juliana@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "thiagoribeiro-dermatologia",
+      "first_name": "Thiago",
+      "last_name": "Ribeiro",
+      "email": "thiago@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "larissacastro-dermatologia",
+      "first_name": "Larissa",
+      "last_name": "Castro",
+      "email": "larissa@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "eduardosantos-dermatologia",
+      "first_name": "Eduardo",
+      "last_name": "Santos",
+      "email": "eduardo@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "fernandapereira-dermatologia",
+      "first_name": "Fernanda",
+      "last_name": "Pereira",
+      "email": "fernanda@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "renataalmeida-pediatria",
+      "first_name": "Renata",
+      "last_name": "Almeida",
+      "email": "renata@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "mateusoliveira-pediatria",
+      "first_name": "Mateus",
+      "last_name": "Oliveira",
+      "email": "mateus@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "alinecardoso-pediatria",
+      "first_name": "Aline",
+      "last_name": "Cardoso",
+      "email": "aline@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "rodrigomoreira-pediatria",
+      "first_name": "Rodrigo",
+      "last_name": "Moreira",
+      "email": "rodrigo@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 21,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "isabelatorres-pediatria",
+      "first_name": "Isabela",
+      "last_name": "Torres",
+      "email": "isabela@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 22,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "marcoshenrique-ortopedia",
+      "first_name": "Marcos",
+      "last_name": "Henrique",
+      "email": "marcos@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 23,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "danielacorreia-ortopedia",
+      "first_name": "Daniela",
+      "last_name": "Correia",
+      "email": "daniela@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 24,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "leonardosilva-ortopedia",
+      "first_name": "Leonardo",
+      "last_name": "Silva",
+      "email": "leonardo@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 25,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "priscilamonteiro-ortopedia",
+      "first_name": "Priscila",
+      "last_name": "Monteiro",
+      "email": "priscila@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 26,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "viniciusaraujo-ortopedia",
+      "first_name": "Vinícius",
+      "last_name": "Araújo",
+      "email": "vinicius@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 27,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "beatriznunes-psicologia",
+      "first_name": "Beatriz",
+      "last_name": "Nunes",
+      "email": "beatriz@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 28,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "gabrielafernandes-psicologia",
+      "first_name": "Gabriela",
+      "last_name": "Fernandes",
+      "email": "gabriela@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 29,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "ricardomartins-psicologia",
+      "first_name": "Ricardo",
+      "last_name": "Martins",
+      "email": "ricardo@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 30,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "talitamachado-psicologia",
+      "first_name": "Talita",
+      "last_name": "Machado",
+      "email": "talita@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 31,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "henriquecunha-psicologia",
+      "first_name": "Henrique",
+      "last_name": "Cunha",
+      "email": "henrique@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 32,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "nataliafreitas-cardiologia",
+      "first_name": "Natália",
+      "last_name": "Freitas",
+      "email": "natalia@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 33,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "pauloazevedo-dermatologia",
+      "first_name": "Paulo",
+      "last_name": "Azevedo",
+      "email": "paulo@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 34,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "vanessaduarte-pediatria",
+      "first_name": "Vanessa",
+      "last_name": "Duarte",
+      "email": "vanessa@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 35,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "renanmoraes-ortopedia",
+      "first_name": "Renan",
+      "last_name": "Moraes",
+      "email": "renan@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 36,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "sabrinaramos-psicologia",
+      "first_name": "Sabrina",
+      "last_name": "Ramos",
+      "email": "sabrina@medlink.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-21T10:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "specialty": 1,
+      "crm": "CRM-12345",
+      "description": "Médica cardiologista com experiência em prevenção, diagnóstico e acompanhamento de doenças cardiovasculares."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "specialty": 2,
+      "crm": "CRM-43783",
+      "description": "Médico dermatologista especializado em cuidados com a pele, acne, manchas, alergias e prevenção de doenças dermatológicas."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 3,
+    "fields": {
+      "user": 4,
+      "specialty": 3,
+      "crm": "CRM-67302",
+      "description": "Médica pediatra com atuação no acompanhamento infantil, vacinação, desenvolvimento da criança e orientações aos responsáveis."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 4,
+    "fields": {
+      "user": 5,
+      "specialty": 4,
+      "crm": "CRM-78403",
+      "description": "Médico ortopedista especializado em dores articulares, lesões musculares, fraturas e acompanhamento de problemas ósseos."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 5,
+    "fields": {
+      "user": 6,
+      "specialty": 5,
+      "crm": "CRM-89047",
+      "description": "Psicóloga com experiência em atendimento clínico, ansiedade, estresse, autoestima e acompanhamento emocional."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 6,
+    "fields": {
+      "user": 7,
+      "specialty": 1,
+      "crm": "CRM-91234",
+      "description": "Médico cardiologista com atuação em prevenção cardiovascular, acompanhamento de hipertensão e avaliação de risco cardíaco."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 7,
+    "fields": {
+      "user": 8,
+      "specialty": 1,
+      "crm": "CRM-91235",
+      "description": "Médica cardiologista especializada em check-ups preventivos, arritmias e acompanhamento de pacientes adultos."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 8,
+    "fields": {
+      "user": 9,
+      "specialty": 1,
+      "crm": "CRM-91236",
+      "description": "Cardiologista com experiência em insuficiência cardíaca, exames clínicos e orientação para qualidade de vida."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 9,
+    "fields": {
+      "user": 10,
+      "specialty": 1,
+      "crm": "CRM-91237",
+      "description": "Médica cardiologista com foco em prevenção, colesterol alto, pressão arterial e acompanhamento contínuo."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 10,
+    "fields": {
+      "user": 11,
+      "specialty": 1,
+      "crm": "CRM-91238",
+      "description": "Cardiologista com atuação em avaliação cardiovascular, eletrocardiograma e orientação preventiva."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 11,
+    "fields": {
+      "user": 12,
+      "specialty": 2,
+      "crm": "CRM-92345",
+      "description": "Médica dermatologista com foco em acne, manchas, saúde da pele e acompanhamento dermatológico preventivo."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 12,
+    "fields": {
+      "user": 13,
+      "specialty": 2,
+      "crm": "CRM-92346",
+      "description": "Dermatologista especializado em alergias de pele, queda de cabelo, unhas e doenças dermatológicas comuns."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 13,
+    "fields": {
+      "user": 14,
+      "specialty": 2,
+      "crm": "CRM-92347",
+      "description": "Médica dermatologista com atuação em prevenção, avaliação de pintas, acne e cuidados clínicos da pele."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 14,
+    "fields": {
+      "user": 15,
+      "specialty": 2,
+      "crm": "CRM-92348",
+      "description": "Dermatologista com experiência em dermatologia clínica, manchas, irritações e acompanhamento de tratamentos."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 15,
+    "fields": {
+      "user": 16,
+      "specialty": 2,
+      "crm": "CRM-92349",
+      "description": "Médica dermatologista voltada para saúde da pele, orientação preventiva e tratamentos clínicos personalizados."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 16,
+    "fields": {
+      "user": 17,
+      "specialty": 3,
+      "crm": "CRM-93456",
+      "description": "Médica pediatra especializada no acompanhamento do crescimento infantil, vacinação e orientação familiar."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 17,
+    "fields": {
+      "user": 18,
+      "specialty": 3,
+      "crm": "CRM-93457",
+      "description": "Pediatra com atuação em puericultura, desenvolvimento infantil e acompanhamento preventivo de crianças."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 18,
+    "fields": {
+      "user": 19,
+      "specialty": 3,
+      "crm": "CRM-93458",
+      "description": "Médica pediatra com experiência em atendimento infantil, orientações aos responsáveis e rotina de vacinação."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 19,
+    "fields": {
+      "user": 20,
+      "specialty": 3,
+      "crm": "CRM-93459",
+      "description": "Pediatra especializado em acompanhamento de bebês, crianças e adolescentes em diferentes fases do crescimento."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 20,
+    "fields": {
+      "user": 21,
+      "specialty": 3,
+      "crm": "CRM-93460",
+      "description": "Médica pediatra com foco em prevenção, crescimento saudável, alimentação infantil e acompanhamento familiar."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 21,
+    "fields": {
+      "user": 22,
+      "specialty": 4,
+      "crm": "CRM-94567",
+      "description": "Médico ortopedista com experiência em lesões esportivas, dores articulares e reabilitação musculoesquelética."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 22,
+    "fields": {
+      "user": 23,
+      "specialty": 4,
+      "crm": "CRM-94568",
+      "description": "Ortopedista com atuação em dores na coluna, joelhos, ombros e acompanhamento de limitações de mobilidade."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 23,
+    "fields": {
+      "user": 24,
+      "specialty": 4,
+      "crm": "CRM-94569",
+      "description": "Médico ortopedista especializado em fraturas, lesões musculares e recuperação funcional."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 24,
+    "fields": {
+      "user": 25,
+      "specialty": 4,
+      "crm": "CRM-94570",
+      "description": "Ortopedista com foco em avaliação postural, dores crônicas e orientação para prevenção de lesões."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 25,
+    "fields": {
+      "user": 26,
+      "specialty": 4,
+      "crm": "CRM-94571",
+      "description": "Médico ortopedista com experiência em problemas ósseos, articulares e acompanhamento de tratamentos conservadores."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 26,
+    "fields": {
+      "user": 27,
+      "specialty": 5,
+      "crm": "CRP-95678",
+      "description": "Psicóloga com atuação em ansiedade, estresse, autoestima e acompanhamento emocional individual."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 27,
+    "fields": {
+      "user": 28,
+      "specialty": 5,
+      "crm": "CRP-95679",
+      "description": "Psicóloga clínica com experiência em terapia individual, saúde emocional e desenvolvimento pessoal."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 28,
+    "fields": {
+      "user": 29,
+      "specialty": 5,
+      "crm": "CRP-95680",
+      "description": "Psicólogo com foco em ansiedade, conflitos pessoais, rotina de estudos e organização emocional."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 29,
+    "fields": {
+      "user": 30,
+      "specialty": 5,
+      "crm": "CRP-95681",
+      "description": "Psicóloga com atuação em autoestima, estresse, relacionamentos e estratégias de enfrentamento emocional."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 30,
+    "fields": {
+      "user": 31,
+      "specialty": 5,
+      "crm": "CRP-95682",
+      "description": "Psicólogo clínico voltado para acompanhamento emocional, escuta terapêutica e qualidade de vida."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 31,
+    "fields": {
+      "user": 32,
+      "specialty": 1,
+      "crm": "CRM-91239",
+      "description": "Cardiologista com experiência em prevenção, check-up cardíaco e acompanhamento de fatores de risco."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 32,
+    "fields": {
+      "user": 33,
+      "specialty": 2,
+      "crm": "CRM-92350",
+      "description": "Dermatologista com atuação em saúde da pele, alergias, lesões e acompanhamento preventivo."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 33,
+    "fields": {
+      "user": 34,
+      "specialty": 3,
+      "crm": "CRM-93461",
+      "description": "Pediatra com experiência em crescimento infantil, acompanhamento escolar e orientação aos responsáveis."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 34,
+    "fields": {
+      "user": 35,
+      "specialty": 4,
+      "crm": "CRM-94572",
+      "description": "Ortopedista especializado em dores musculares, articulações, mobilidade e prevenção de lesões."
+    }
+  },
+  {
+    "model": "app.doctor",
+    "pk": 35,
+    "fields": {
+      "user": 36,
+      "specialty": 5,
+      "crm": "CRP-95683",
+      "description": "Psicóloga com foco em ansiedade, estresse, rotina, autoestima e acompanhamento emocional."
+    }
   }
-},
-{
-  "model": "app.specialty",
-  "pk": 2,
-  "fields": {
-    "name": "Dermatologia",
-    "description": "Especialidade de Dermatologia"
-  }
-},
-{
-  "model": "app.specialty",
-  "pk": 3,
-  "fields": {
-    "name": "Pediatria",
-    "description": "Especialidade de Pediatria"
-  }
-},
-{
-  "model": "app.specialty",
-  "pk": 4,
-  "fields": {
-    "name": "Ortopedia",
-    "description": "Especialidade de Ortopedia"
-  }
-},
-{
-  "model": "app.specialty",
-  "pk": 5,
-  "fields": {
-    "name": "Psicologia",
-    "description": "Especialidade de Psicologia"
-  }
-},
-{
-  "model": "app.doctor",
-  "pk": 1,
-  "fields": {
-    "user": 2,
-    "specialty": 1,
-    "crm": "CRM-12345",
-    "description": "Médica cardiologista com experiência em prevenção, diagnóstico e acompanhamento de doenças cardiovasculares."
-  }
-},
-{
-  "model": "app.doctor",
-  "pk": 2,
-  "fields": {
-    "user": 3,
-    "specialty": 2,
-    "crm": "CRM-43783",
-    "description": "Médico dermatologista especializado em cuidados com a pele, acne, manchas, alergias e prevenção de doenças dermatológicas."
-  }
-},
-{
-  "model": "app.doctor",
-  "pk": 3,
-  "fields": {
-    "user": 4,
-    "specialty": 3,
-    "crm": "CRM-67302",
-    "description": "Médica pediatra com atuação no acompanhamento infantil, vacinação, desenvolvimento da criança e orientações aos responsáveis."
-  }
-},
-{
-  "model": "app.doctor",
-  "pk": 4,
-  "fields": {
-    "user": 5,
-    "specialty": 4,
-    "crm": "CRM-78403",
-    "description": "Médico ortopedista especializado em dores articulares, lesões musculares, fraturas e acompanhamento de problemas ósseos."
-  }
-},
-{
-  "model": "app.doctor",
-  "pk": 5,
-  "fields": {
-    "user": 6,
-    "specialty": 5,
-    "crm": "CRM-89047",
-    "description": "Psicóloga com experiência em atendimento clínico, ansiedade, estresse, autoestima e acompanhamento emocional."
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$IkFt9N7ugKgGq0gHGG3t0O$yUCDHSnPIloxQQBWjbRa0+f2FHTCIKKAljpx4BR9IpI=",
-    "last_login": "2026-05-17T22:04:32.857Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@medlink.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2026-05-17T22:04:16.893Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$aQv4aNkUSzyBcQD7uQ9IfL$LAWLYPMl/F3+7tjhN4ny+Et23W+Q0TeRqtp89KkAx/4=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "anamartins-cardiologia",
-    "first_name": "Ana",
-    "last_name": "Martins",
-    "email": "ana@medlink.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-05-17T22:06:40Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$VAQ72azRa6UAM4SshuiF6m$YmivKk0YSVUa7a7p7esS0h3x2FYc0L/nIYSb0ZJB6ig=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "brunocosta-dermatologia",
-    "first_name": "Bruno",
-    "last_name": "Costa",
-    "email": "bruno@medlink.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-05-17T22:07:17Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$cR3ZEd8cPAzjnU0wnUdfyL$NfZh6+jbjyvqMhniA3fWbEopiGKe39o4T9sdbzGQFLg=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "carlasouza-pediatria",
-    "first_name": "Carla",
-    "last_name": "Souza",
-    "email": "carla@medlink.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-05-17T22:07:52Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 5,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$TMcY6ycxYJZHlD4Uei4pjN$wztS+tK0M9KJaVD/Nkoz0Sb5cUG3TjFlpVqzSghIo9g=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "feliperocha-ortopedia",
-    "first_name": "Felipe",
-    "last_name": "Rocha",
-    "email": "felipe@medlink.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-05-17T22:08:20Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 6,
-  "fields": {
-    "password": "pbkdf2_sha256$1200000$oig80vCn3678YVxLhAC5po$IppKC3LO41BlNy2qxlrtJ6ScQVbh/rz1ekTfPgVuVsk=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "marinalopes-psicologia",
-    "first_name": "Marina",
-    "last_name": "Lopes",
-    "email": "marina@medlink.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2026-05-17T22:08:49Z",
-    "groups": [],
-    "user_permissions": []
-  }
-}
 ]
